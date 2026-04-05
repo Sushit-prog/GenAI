@@ -1,0 +1,45 @@
+# Core
+langchain
+langchain-core
+langchain-community
+
+# LLM Providers
+langchain-mistralai
+langchain-cohere
+
+# Groq (OpenAI-compatible + official client)
+groq
+openai
+
+# Vector DB
+chromadb
+
+# Embeddings
+sentence-transformers
+
+# Document processing
+pypdf
+unstructured[all-docs]
+beautifulsoup4
+lxml
+
+# Tokenization
+tiktoken
+
+# Env
+python-dotenv
+
+# Data
+pandas
+numpy
+
+# Backend
+fastapi
+uvicorn
+
+# UI
+streamlit
+
+# Utilities
+tqdm
+requests
