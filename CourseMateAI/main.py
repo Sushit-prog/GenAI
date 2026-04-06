@@ -1,12 +1,22 @@
 from dotenv import load_dotenv
-from langchain_groq import ChatGroq
+from langchain_groq import ChatMistral
 from langchain_community.document_loaders import PyPDFLoader
 from langchain_core.prompts import ChatPromptTemplate
+from langchain_text_splitters import RecursiveCharacterTextSplitter
+
+
 
 load_dotenv()
 
-data = PyPDFLoader(r"C:\Users\pakra\Desktop\genai\CourseMateAI\documentloaders\GRU.pdf")
+data = PyPDFLoader(r"C:\Users\pakra\Desktop\genai\CourseMateAI\documentloaders\deep-learning-material-dept-ece-ase-bir-1.pdf")
 docs = data.load()
+
+splitter = RecursiveCharacterTextSplitter(
+  chunk_size=1000,
+  chunk_overlap=200
+)
+
+chunks =splitter.split_documents(docs)
 
 template = ChatPromptTemplate.from_messages(
   [
@@ -15,7 +25,7 @@ template = ChatPromptTemplate.from_messages(
   ]
 )
 
-model = ChatGroq(model="llama-3.1-8b-instant")
+model = ChatMistral(model="mistral-small-2603")
 
 prompt = template.format_messages(data=docs)
 
