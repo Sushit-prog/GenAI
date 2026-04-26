@@ -1,16 +1,16 @@
-# Virtual environment
-.venv/
-
-# Environment variables (NEVER push this)
+# env files
 .env
+.env.*
 
-# Python cache
+# python
 __pycache__/
 *.pyc
 *.pyo
 
-# VS Code
-.vscode/
+# virtual env
+venv/
+.venv/
 
-# Temp files
-tempCodeRunnerFile.py
+# OS / editor junk
+.DS_Store
+.vscode/
